@@ -1,3 +1,7 @@
+import pygame
+
+#-----------------------------------------Functions------------------------------------------------
+
 def coor_to_px(coordinates):
     x, y = coordinates
     return (x * 200, y * 200)
@@ -23,3 +27,21 @@ def pos_to_coord(x, y):
     x = (x/200) % 3
     y = (y/200) % 3
     return int(x), int(y)
+
+#-------------------------------------------/ Functions -----------------------------------------------
+
+#------------------------------------------- Pygame utilities -----------------------------------------
+pygame.init()
+
+# Title and Icon
+pygame.display.set_caption("TicTacToe")
+icon = pygame.image.load("./assets/icon.png")
+pygame.display.set_icon(icon)
+
+# create the screen
+screen = pygame.display.set_mode((width, height))
+
+# loading Sprites
+box = pygame.image.load('./assets/sprites/sprite_box.png')
+cross = pygame.image.load('./assets/sprites/sprite_x.png')
+zero = pygame.image.load('./assets/sprites/sprite_o.png')
